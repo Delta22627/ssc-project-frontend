@@ -4,6 +4,5 @@
       <h1>This is an about page ttt</h1>
     </div>
   </v-container>
-
-
 </template>
+

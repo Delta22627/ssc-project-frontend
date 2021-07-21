@@ -11,21 +11,21 @@
 
         <v-text-field
           v-model="firstname"
-          :rules="usernameRules"
+          :rules="firstNameRules"
           label="Firstname"
           required
         ></v-text-field>
 
         <v-text-field
           v-model="lastname"
-          :rules="usernameRules"
+          :rules="lastNameRules"
           label="Lastname"
           required
         ></v-text-field>
 
         <v-text-field
           v-model="dateofbirth"
-          :rules="usernameRules"
+          :rules="dateOfBirthRules"
           label="Date of Birth"
           required
         ></v-text-field>
@@ -37,10 +37,14 @@
           label="Password"
           required
         ></v-text-field>
-
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"
-          >Create
+        <div>
+        <v-btn :disabled="!valid" color="success" class="mr-4" @click="submit">
+          <v-icon left>
+            mdi-account-plus
+          </v-icon>
+          Create
         </v-btn>
+        </div>
       </v-form>
     </template>
   </v-container>
@@ -59,6 +63,10 @@ export default {
     dateofbirth: "",
     usernameRules: [(v) => !!v || "User is required"],
     passwordRules: [(v) => !!v || "Password is required"],
+    firstNameRules: [(v) => !!v || "First name is required"],
+    lastNameRules: [(v) => !!v || "Last name is required"],
+    dateOfBirthRules: [(v) => !!v || "Date of Birth is required"],
+
   }),
 
   methods: {
