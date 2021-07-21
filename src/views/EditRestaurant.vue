@@ -1,13 +1,83 @@
 <template>
+  <v-container>
+    <div class="EditRestaurant">
+      <h1> Edit Restaurant {Restaurant Name}</h1>
+    </div>
+    <template>
+      <v-form ref="form" v-model="valid" lazy-validation>
 
+        <v-text-field
+            v-model="RestaurantName"
+            :rules="RestaurantNameRule"
+            label="Restaurant Name"
+            required
+        ></v-text-field>
+
+        <v-text-field
+            v-model="About"
+            :rules="AboutRule"
+            label="About"
+            required
+        ></v-text-field>
+
+        <v-text-field
+            v-model="Address"
+            :rules="AddressRule"
+            label="Address"
+            required
+        ></v-text-field>
+
+
+        <input type="file" @change="onFileSelected">
+        <v-btn @click="onUpload" color="grey" class="mr-4">Upload</v-btn>
+
+
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">confirm</v-btn>
+        <v-btn :disabled="!valid" color="red" class="mr-4" @click="reset">cancel</v-btn>
+
+      </v-form>
+    </template>
+  </v-container>
 </template>
 
 <script>
+import Vue from "vue";
+
 export default {
-  name: "EditRestaurant"
+  data: () => ({
+    valid: true,
+    RestaurantNameRule: "",
+    AboutRule: "",
+    AddressRule: "",
+    selectedFile: null
+  }),
+
+  methods: {
+    async submit() {
+      if (this.$refs.form.validate()) {
+        //submit to backend to authenticate
+
+        let response = await Vue.axios.post("/api/user", {
+          username: this.username,
+          firstName: this.firstname,
+          lastName: this.lastname,
+          dateOfBirth: this.dateofbirth,
+          password: this.password,
+        });
+        console.log(response);
+        if (response.data.success) {
+          this.$router.push({path: "/"});
+        }
+      }
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+    onFileSelected(event) {
+      this.selectedFile = event.target.file[0]
+    },
+    onUpload() {
+    },
+  }
 };
 </script>
-
-<style scoped>
-
-</style>
