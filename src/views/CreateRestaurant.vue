@@ -30,8 +30,11 @@
         <v-btn @click="onUpload" color="grey" class="mr-4">Upload</v-btn>
 
 
+
         <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">Create
         </v-btn>
+        <v-btn :disabled="!valid" color="red" class="mr-4" @click="reset">cancel</v-btn>
+
       </v-form>
     </template>
   </v-container>
