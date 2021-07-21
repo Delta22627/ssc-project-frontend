@@ -66,6 +66,7 @@ export default {
       { title: "Home", icon: "mdi-home", to: "/" },
       { title: "About", icon: "mdi-information", to: "/about" },
       { title: "Create", icon: "mdi-information", to: "/createuser" },
+      { title: "AddRestaurant", icon: "mdi-information", to: "/createRestaurant" },
     ],
     right: null,
   }),

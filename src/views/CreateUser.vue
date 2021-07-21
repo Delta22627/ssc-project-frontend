@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <div class="createRes">
+      <h1> Create a new User </h1>
+    </div>
     <template>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field

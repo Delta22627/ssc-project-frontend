@@ -11,7 +11,6 @@
       <li>
         <router-link to="/login">Go to Login</router-link>
       </li>
-
     </ul>
   </v-container>
 </template>
@@ -23,9 +22,5 @@ export default {
 
   components: {
   },
-
-
-
-
 };
 </script>
