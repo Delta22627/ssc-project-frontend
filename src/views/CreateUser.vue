@@ -41,7 +41,7 @@
           required
         ></v-text-field>
 
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"
+        <v-btn :disabled="!valid" color="primary"  class="mr-4" @click="submit "
           >Create
         </v-btn>
       </v-form>

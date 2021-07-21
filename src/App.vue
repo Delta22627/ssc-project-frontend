@@ -1,20 +1,22 @@
 <template>
   <v-app id="inspire">
     <div v-if="$route.name != 'Login'">
-      <v-navigation-drawer v-model="drawer" app>
+      <v-navigation-drawer v-model="drawer" app class="orange">
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="text-h6">
               Restaurant Reviewer
-            </v-list-item-title>
+            </v-list-item-title >
             <v-list-item-subtitle>
 
-              <v-form ref="form" v-model="valid" lazy-validation>
+              <v-form ref="form" v-model="valid" lazy-validation >
                 <v-btn
                   :disabled="!valid"
-                  color="success"
+                  color="red"
                   class="mr-4"
                   @click="submit"
+                  elevation="2"
+                  small
                   >Logout</v-btn
                 >
               </v-form>
@@ -27,6 +29,7 @@
             v-for="item in items"
             :key="item.title"
             :to="item.to"
+            active-class="red--text"
             link
           >
             <v-list-item-icon>
@@ -54,6 +57,7 @@
 
     </v-main>
   </v-app>
+
 
 </template>
 
