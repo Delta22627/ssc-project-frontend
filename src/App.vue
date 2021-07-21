@@ -8,7 +8,7 @@
               Restaurant Reviewer
             </v-list-item-title>
             <v-list-item-subtitle>
-              Menu
+
               <v-form ref="form" v-model="valid" lazy-validation>
                 <v-btn
                   :disabled="!valid"
@@ -38,6 +38,8 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
+
+
       </v-navigation-drawer>
 
       <v-app-bar app>
@@ -49,8 +51,10 @@
 
     <v-main>
       <router-view> </router-view>
+
     </v-main>
   </v-app>
+
 </template>
 
 <script>
@@ -65,10 +69,10 @@ export default {
       { title: "User", icon: "mdi-account", to: "/user" },
       { title: "Home", icon: "mdi-home", to: "/" },
       { title: "About", icon: "mdi-information", to: "/about" },
-      { title: "Create", icon: "mdi-information", to: "/createuser" },
-      { title: "AddRestaurant", icon: "mdi-information", to: "/createRestaurant" },
-      { title: "EditUser", icon: "mdi-information", to: "/editUser" },
-      { title: "EditRestaurant", icon: "mdi-information", to: "/editRestaurant" },
+      { title: "Create New User", icon: "mdi-account-plus", to: "/createuser" },
+      { title: "Create Restaurant", icon: "mdi-plus", to: "/createRestaurant" },
+      { title: "EditUser", icon: "mdi-pencil", to: "/editUser" },
+      { title: "EditRestaurant", icon: "mdi-pencil", to: "/editRestaurant" },
     ],
     right: null,
   }),
