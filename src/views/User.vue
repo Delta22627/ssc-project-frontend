@@ -4,8 +4,8 @@
 
     <v-row justify="end">
       <v-col cols="12" sm="6" class="text-right">
-        <v-btn :disabled="!valid" color="blue" class="mr-4" @click="edit"><v-icon left>mdi-pencil</v-icon>edit</v-btn>
-        <v-btn :disabled="!valid" color="green" class="mr-4" @click="add"><v-icon left>mdi-store</v-icon>Add your Restaurant</v-btn>
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="edit"><v-icon left>mdi-pencil</v-icon>edit</v-btn>
+        <v-btn :disabled="!valid" color="warning" class="mr-4" @click="add"><v-icon left>mdi-store</v-icon>Add your Restaurant</v-btn>
       </v-col>
     </v-row>
 
