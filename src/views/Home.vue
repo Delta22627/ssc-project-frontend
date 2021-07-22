@@ -13,6 +13,11 @@
       </li>
     </ul>
   </v-container>
+  <section id="feed">
+    <feed>
+      <slot />
+    </feed>
+  </section>
 </template>
 
 <script>
@@ -21,6 +26,7 @@ export default {
   name: "Home",
 
   components: {
+    Feed: () => import('@/components/Feed'),
   },
 };
 </script>
