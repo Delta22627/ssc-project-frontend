@@ -9,7 +9,7 @@
             </v-list-item-title >
             <v-list-item-subtitle>
 
-              <v-form ref="form" v-model="valid" lazy-validation >
+<!--              <v-form ref="form" v-model="valid" lazy-validation >
                 <v-btn
                   :disabled="!valid"
                   color="red"
@@ -19,7 +19,7 @@
                   small
                   >Logout</v-btn
                 >
-              </v-form>
+              </v-form>-->
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -29,7 +29,7 @@
             v-for="item in items"
             :key="item.title"
             :to="item.to"
-            active-class="red--text"
+            active-class="black--text"
             link
           >
             <v-list-item-icon>
@@ -49,6 +49,21 @@
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title> MUIC Restaurant Reviewer </v-toolbar-title>
+        <v-spacer> </v-spacer>
+
+          <v-form ref="form" v-model="valid" lazy-validation >
+            <v-btn
+                :disabled="!valid"
+                color="red"
+                class="mr-4"
+                @click="submit"
+                elevation="2"
+                small
+            ><v-icon
+            >mdi-logout</v-icon>Logout</v-btn
+            >
+          </v-form>
+
       </v-app-bar>
     </div>
 
