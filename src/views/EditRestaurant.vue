@@ -8,21 +8,21 @@
 
         <v-text-field
             v-model="RestaurantName"
-            :rules="RestaurantNameRule"
+            :rules="restaurantNameRules"
             label="Restaurant Name"
             required
         ></v-text-field>
 
         <v-text-field
             v-model="About"
-            :rules="AboutRule"
+            :rules="aboutRules"
             label="About"
             required
         ></v-text-field>
 
         <v-text-field
             v-model="Address"
-            :rules="AddressRule"
+            :rules="addressRules"
             label="Address"
             required
         ></v-text-field>
@@ -51,6 +51,9 @@ export default {
     About: "",
     Address: "",
     selectedFile: null,
+    restaurantNameRules: [(v) => !!v || "Restaurant name is required"],
+    aboutRules: [(v) => !!v || "describe your restaurant"],
+    addressRules: [(v) => !!v || "Restaurant address is required"],
     image:"",
   }),
 
@@ -60,11 +63,10 @@ export default {
         //submit to backend to authenticate
 
         let response = await Vue.axios.post("/api/user", {
-          username: this.username,
-          firstName: this.firstname,
-          lastName: this.lastname,
-          dateOfBirth: this.dateofbirth,
-          password: this.password,
+          description: this.About,
+          address: this.Address,
+          name: this.RestaurantName,
+
         });
         console.log(response);
         if (response.data.success) {
