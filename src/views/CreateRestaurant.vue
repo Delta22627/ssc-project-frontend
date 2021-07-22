@@ -68,11 +68,7 @@ export default {
         //submit to backend to authenticate
 
         let response = await Vue.axios.post("/api/restaurant", {
-<<<<<<< Updated upstream
           name: this.restaurantName,
-=======
-          name: this.name,
->>>>>>> Stashed changes
           description: this.description,
           address: this.address,
           photo: this.selectedFile,
