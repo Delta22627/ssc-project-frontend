@@ -1,7 +1,10 @@
 <template>
-  <v-container fill-height >
+
+  <v-container fill-height  >
+
     <template>
-      <v-layout class=" align-center justify-center">
+      <main class="box">
+      <v-layout class=" align-center justify-center" >
 
       <v-form ref="form" v-model="valid" lazy-validation>
         <h2 align="left">Login </h2>
@@ -31,6 +34,7 @@
 
       </v-form>
       </v-layout>
+      </main>
     </template>
   </v-container>
 </template>
@@ -66,4 +70,26 @@ export default {
     },
   },
 };
+
 </script>
+<style>
+
+.box {
+  background-color: #BDBDBD;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+  margin: auto auto;
+  padding: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+.box h2 {
+  margin: 0 0 30px 0;
+  padding: 0;
+  color: #000000;
+  text-align: center;
+}
+</style>
