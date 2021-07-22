@@ -50,7 +50,8 @@
         ></v-text-field>
 
         <v-btn :disabled="!valid" color="primary"  class="mr-4" @click="submit "
-          >Create
+          >
+          <v-icon left> mdi-account-multiple-plus </v-icon> create
         </v-btn>
       </v-form>
     </template>
