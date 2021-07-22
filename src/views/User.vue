@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <template>
   <v-container>
 
@@ -43,3 +44,5 @@ export default {
   }
 };
 </script>
+=======
+>>>>>>> Stashed changes

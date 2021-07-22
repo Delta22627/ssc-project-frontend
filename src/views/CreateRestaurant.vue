@@ -68,10 +68,14 @@ export default {
         //submit to backend to authenticate
 
         let response = await Vue.axios.post("/api/restaurant", {
+<<<<<<< Updated upstream
           name: this.restaurantName,
+=======
+          name: this.name,
+>>>>>>> Stashed changes
           description: this.description,
           address: this.address,
-
+          photo: this.selectedFile,
         });
         console.log(response);
         if (response.data.success) {
@@ -92,6 +96,7 @@ export default {
       this.selectedFile = event.target.file[0]
     },
     onUpload() {
+
     },
     createImage(files){
       var reader = new FileReader();
