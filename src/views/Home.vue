@@ -1,5 +1,6 @@
 
 <template>
+
   <v-container>
 <!--    <h2>Home Page</h2>-->
 <!--    <ul>-->
@@ -15,11 +16,12 @@
 <!--    </ul>-->
     <v-row>
       <v-col
-          v-for="n in 9"
+          v-for="n in 10"
           :key="n"
           class="d-flex child-flex"
-          cols="4"
+          cols="6"
       >
+        <v-card>
         <v-img
             :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
             :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
@@ -39,6 +41,9 @@
             </v-row>
           </template>
         </v-img>
+
+          <h1>Name</h1>
+          <h2>Info</h2>
         <v-rating>
           v-model ="averageRating"
           color ="amber"
@@ -52,6 +57,7 @@
           size="64"
           value="3"
           ></v-rating>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
