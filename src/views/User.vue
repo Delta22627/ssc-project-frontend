@@ -59,7 +59,7 @@ export default {
     },
 
     async submit() {
-      if (this.$refs.form.validate()) {
+      /*if (this.$refs.form.validate()) {*/
         //submit to backend to authenticate
         let response = await Vue.axios.get("/api/logout");
         if (response.data.success) {
@@ -69,6 +69,5 @@ export default {
     }, reset() {
       this.$refs.form.reset();
     },
-  },
 };
 </script>
