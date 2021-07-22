@@ -6,22 +6,22 @@
     <template>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
-            v-model="RestaurantName"
-            :rules="RestaurantNameRule"
+            v-model="restaurantName"
+            :rules="restaurantNameRules"
             label="Restaurant Name"
             required
         ></v-text-field>
 
         <v-text-field
-            v-model="About"
-            :rules="AboutRule"
+            v-model="description"
+            :rules="aboutRules"
             label="About"
             required
         ></v-text-field>
 
         <v-text-field
-            v-model="Address"
-            :rules="AddressRule"
+            v-model="address"
+            :rules="addressRules"
             label="Address"
             required
         ></v-text-field>
@@ -32,12 +32,14 @@
         <div id="app"><img width="30%" :src="image" /> <HelloWorld /></div>
 
 
-        <v-btn @click="onUpload" color="grey" class="mr-4"><v-icon>mdi-upload</v-icon>Upload</v-btn>
+        <v-btn @click="onUpload" color="grey" class="mr-4"><v-icon left>mdi-upload</v-icon>Upload</v-btn>
 
 
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">Create
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">
+          <v-icon left>mdi-plus-circle</v-icon>Create
         </v-btn>
-        <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
+        <v-btn color="error" class="mr-4" @click="reset">
+          <v-icon left>mdi-close-circle</v-icon>Reset</v-btn>
 
       </v-form>
     </template>
@@ -50,10 +52,13 @@ import Vue from "vue";
 export default {
   data: () => ({
     valid: true,
-    RestaurantNameRule: "",
-    AboutRule: "",
-    AddressRule: "",
+    restaurantName: "",
+    description: "",
+    address: "",
     selectedFile: null,
+    restaurantNameRules: [(v) => !!v || "Restaurant name is required"],
+    aboutRules: [(v) => !!v || "Describe your restaurant"],
+    addressRules: [(v) => !!v || "Address must be provided"],
     image:""
   }),
 
@@ -63,11 +68,10 @@ export default {
         //submit to backend to authenticate
 
         let response = await Vue.axios.post("/api/user", {
-          username: this.username,
-          firstName: this.firstname,
-          lastName: this.lastname,
-          dateOfBirth: this.dateofbirth,
-          password: this.password,
+          name: this.restaurantName,
+          description: this.description,
+          address: this.address,
+
         });
         console.log(response);
         if (response.data.success) {

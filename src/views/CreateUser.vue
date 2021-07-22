@@ -53,6 +53,8 @@
           >
           <v-icon left> mdi-account-multiple-plus </v-icon> create
         </v-btn>
+        <v-btn color="error" class="mr-4" @click="reset">
+          <v-icon left>mdi-close-circle</v-icon>Reset</v-btn>
       </v-form>
     </template>
   </v-container>
