@@ -41,7 +41,6 @@
             </v-row>
           </template>
         </v-img>
-
           <h1>Name</h1>
           <h2>Info</h2>
         <v-rating>
