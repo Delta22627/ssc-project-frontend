@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="EditUser">
-      <h1>Edit User {this.username} Password</h1>
+      <h1>Edit User's Password</h1>
     </div>
     <template>
       <v-form ref="form" v-model="valid" lazy-validation>

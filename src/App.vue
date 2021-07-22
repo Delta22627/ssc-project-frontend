@@ -84,7 +84,6 @@ export default {
       { title: "Create New User", icon: "mdi-account-plus", to: "/createUser" },
       { title: "Create Restaurant", icon: "mdi-plus", to: "/createRestaurant" },
       { title: "Edit User", icon: "mdi-pencil", to: "/editUser" },
-      { title: "Edit Restaurant", icon: "mdi-pen", to: "/editRestaurant" },
     ],
     right: null,
   }),
