@@ -5,7 +5,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="text-h6">
-              Restaurant Reviewer
+              MENU
             </v-list-item-title >
             <v-list-item-subtitle>
 
@@ -73,10 +73,10 @@ export default {
       { title: "User", icon: "mdi-account", to: "/user" },
       { title: "Home", icon: "mdi-home", to: "/" },
       { title: "About", icon: "mdi-information", to: "/about" },
-      { title: "Create New User", icon: "mdi-account-plus", to: "/createuser" },
+      { title: "Create New User", icon: "mdi-account-plus", to: "/createUser" },
       { title: "Create Restaurant", icon: "mdi-plus", to: "/createRestaurant" },
-      { title: "EditUser", icon: "mdi-pencil", to: "/editUser" },
-      { title: "EditRestaurant", icon: "mdi-pencil", to: "/editRestaurant" },
+      { title: "Edit User", icon: "mdi-pencil", to: "/editUser" },
+      { title: "Edit Restaurant", icon: "mdi-pencil", to: "/editRestaurant" },
     ],
     right: null,
   }),

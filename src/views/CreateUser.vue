@@ -41,6 +41,14 @@
           required
         ></v-text-field>
 
+        <v-text-field
+            type="password"
+            v-model="cpassword"
+            :rules="passwordRules"
+            label="Confirm Password"
+            required
+        ></v-text-field>
+
         <v-btn :disabled="!valid" color="primary"  class="mr-4" @click="submit "
           >Create
         </v-btn>
@@ -59,6 +67,7 @@ export default {
     firstname: "",
     lastname: "",
     password: "",
+    cpassword:"",
     dateofbirth: "",
     usernameRules: [(v) => !!v || "User is required"],
     passwordRules: [(v) => !!v || "Password is required"],
