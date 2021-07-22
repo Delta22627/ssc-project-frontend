@@ -14,12 +14,11 @@
 <!--        <router-link to="/login">Go to Login</router-link>-->
 <!--      </li>-->
 <!--    </ul>-->
-    <v-row>
+    <v-row >
       <v-col
           v-for="n in 10"
           :key="n"
           class="d-flex child-flex"
-          cols="6"
       >
         <v-card>
         <v-img
