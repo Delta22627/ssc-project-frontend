@@ -45,10 +45,11 @@
 
       </v-navigation-drawer>
 
-      <v-app-bar app>
-        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar app height="100px" src="https://image.shutterstock.com/image-photo/healthy-clean-food-cooking-eating-260nw-1847997298.jpg" >
 
-        <v-toolbar-title> MUIC Restaurant Reviewer </v-toolbar-title>
+        <v-app-bar-nav-icon color="orange" @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+        <v-toolbar-title class="white--text"> MUIC Restaurant Reviewer </v-toolbar-title>
         <v-spacer> </v-spacer>
 
           <v-form ref="form" v-model="valid" lazy-validation >
