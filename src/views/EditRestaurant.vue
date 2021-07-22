@@ -33,8 +33,8 @@
         <v-btn @click="onUpload" color="grey" class="mr-4"><v-icon>mdi-upload</v-icon>Upload</v-btn>
 
 
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"><v-icon>mdi-check</v-icon>confirm</v-btn>
-        <v-btn :disabled="!valid" color="red" class="mr-4" @click="reset"><v-icon>mdi-close-circle</v-icon>cancel</v-btn>
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"><v-icon left>mdi-check</v-icon>confirm</v-btn>
+        <v-btn :disabled="!valid" color="error" class="mr-4" @click="reset"><v-icon left>mdi-close-circle</v-icon>reset</v-btn>
 
       </v-form>
     </template>
