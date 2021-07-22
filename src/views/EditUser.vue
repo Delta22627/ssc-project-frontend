@@ -6,6 +6,13 @@
     <template>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
+          v-model="username"
+          :rules="usernameRules"
+          label="Input username"
+          required
+        ></v-text-field>
+
+        <v-text-field
           type="password"
           v-model="password"
           :rules="passwordRules"
@@ -38,18 +45,21 @@ import Vue from "vue";
 export default {
   data: () => ({
     valid: true,
+    username: "",
     newPassword: "",
     password: "",
+    usernameRules: [(v) => !!v || "Username cannot be blank"],
     newPasswordRules: [(v) => !!v || "Password cannot be blank"],
     passwordRules: [(v) => !!v || "Password is required"],
   }),
 
   methods: {
     async submit() {
-      if (this.$refs.form.validate() ) {
+      if (this.$refs.form.validate()) {
         //submit to backend to authenticate
 
         let response = await Vue.axios.post("/api/user", {
+          username: this.username,
           password: this.newPassword,
         });
         console.log(response);
