@@ -28,8 +28,9 @@
         ></v-text-field>
 
 
-        <input type="file" @change="onFileSelected">
-        <v-btn @click="onUpload" color="grey" class="mr-4">Upload</v-btn>
+        <input type="file" @change="onFileSelected" class="form-control" ref="inputFile"/>
+        <div id="app"><img width="30%" :src="image" /> <HelloWorld /></div>
+        <v-btn @click="onUpload" color="grey" class="mr-4"><v-icon>mdi-upload</v-icon>Upload</v-btn>
 
 
         <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">confirm</v-btn>
@@ -49,7 +50,9 @@ export default {
     RestaurantNameRule: "",
     AboutRule: "",
     AddressRule: "",
-    selectedFile: null
+    selectedFile: null,
+    image:""
+
   }),
 
   methods: {
@@ -71,12 +74,23 @@ export default {
       }
     },
     reset() {
-      this.$refs.form.reset();
+      window.location.reload();
     },
     onFileSelected(event) {
+      var files = event.target.files
+      if (!files.length)
+        return
+      this.createImage(files[0]);
       this.selectedFile = event.target.file[0]
     },
     onUpload() {
+    },
+    createImage(files){
+      var reader = new FileReader();
+      reader.onload = (event) => {
+        this.image = event.target.result;
+      }
+      reader.readAsDataURL(files)
     },
   }
 };

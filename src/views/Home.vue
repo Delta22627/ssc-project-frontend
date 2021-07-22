@@ -1,3 +1,4 @@
+<!--
 <template>
   <v-container>
     <h2>Home Page</h2>
@@ -30,3 +31,4 @@ export default {
   },
 };
 </script>
+-->
