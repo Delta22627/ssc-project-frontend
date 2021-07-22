@@ -35,16 +35,45 @@
 
         <div id="app"><img width="30%" :src="image" /> <HelloWorld /></div>
 
-        <v-btn @click="onUpload" color="grey" class="mr-4"
-          ><v-icon left>mdi-upload</v-icon>Upload</v-btn
-        >
+        <v-row justify="space-around">
+          <v-col>
+            <v-dialog
+                transition="dialog-bottom-transition"
+                max-width="600"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                    color="primary"
+                    v-bind="attrs"
+                    v-on="on"
+                    :disabled="!valid" class="mr-4" @click="submit"
+                ><v-icon left>mdi-store</v-icon>CREATE</v-btn>
+              </template>
+              <template v-slot:default="dialog">
+                <v-card>
+                  <v-toolbar
+                      color="green"
+                      dark
+                  >Successfully!</v-toolbar>
+                  <v-card-text>
+                    <div class="text-h2 pa-12">Added Restaurant Successfully!!
+                    </div>
+                  </v-card-text>
+                  <v-card-actions class="justify-end">
+                    <v-btn
+                        text
+                        @click="dialog.value = false"
+                    >Close</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </template>
+            </v-dialog>
+            <v-btn :disabled="!valid" color="error" class="mr-4" @click="reset"
+            ><v-icon left>mdi-close-circle</v-icon>reset</v-btn>
+          </v-col>
+        </v-row>
 
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">
-          <v-icon left>mdi-plus-circle</v-icon>Create
-        </v-btn>
-        <v-btn color="error" class="mr-4" @click="reset">
-          <v-icon left>mdi-close-circle</v-icon>Reset</v-btn
-        >
+
       </v-form>
     </template>
   </v-container>

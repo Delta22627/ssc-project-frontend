@@ -30,11 +30,44 @@
 
         <input type="file" @change="onFileSelected" class="form-control" ref="inputFile"/>
         <div id="app"><img width="30%" :src="image" /> <HelloWorld /></div>
-        <v-btn @click="onUpload" color="grey" class="mr-4"><v-icon>mdi-upload</v-icon>Upload</v-btn>
 
-
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"><v-icon left>mdi-check</v-icon>confirm</v-btn>
-        <v-btn :disabled="!valid" color="error" class="mr-4" @click="reset"><v-icon left>mdi-close-circle</v-icon>reset</v-btn>
+        <v-row justify="space-around">
+          <v-col>
+            <v-dialog
+                transition="dialog-bottom-transition"
+                max-width="600"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                    color="primary"
+                    v-bind="attrs"
+                    v-on="on"
+                    :disabled="!valid" class="mr-4" @click="submit"
+                ><v-icon left>mdi-check</v-icon>CONFIRM</v-btn>
+              </template>
+              <template v-slot:default="dialog">
+                <v-card>
+                  <v-toolbar
+                      color="green"
+                      dark
+                  >Successfully!</v-toolbar>
+                  <v-card-text>
+                    <div class="text-h2 pa-12">Restaurant updated!!!
+                    </div>
+                  </v-card-text>
+                  <v-card-actions class="justify-end">
+                    <v-btn
+                        text
+                        @click="dialog.value = false"
+                    >Close</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </template>
+            </v-dialog>
+            <v-btn :disabled="!valid" color="error" class="mr-4" @click="reset"
+            ><v-icon left>mdi-close-circle</v-icon>reset</v-btn>
+          </v-col>
+        </v-row>
 
       </v-form>
     </template>
