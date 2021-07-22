@@ -67,7 +67,7 @@ export default {
       if (this.$refs.form.validate()) {
         //submit to backend to authenticate
 
-        let response = await Vue.axios.post("/api/user", {
+        let response = await Vue.axios.post("/api/restaurant", {
           name: this.restaurantName,
           description: this.description,
           address: this.address,
