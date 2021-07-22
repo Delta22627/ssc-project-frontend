@@ -75,7 +75,7 @@ export default {
 <style>
 
 .box {
-  background-color: #BDBDBD;
+  background-color: #D7DBDD;
   border-radius: 20px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
   margin: auto auto;

@@ -4,11 +4,10 @@
       <v-navigation-drawer v-model="drawer" app class="orange">
         <v-list-item>
           <v-list-item-content>
-            <main class="box">
-            <v-list-item-title class="text-h6">
-              MENU
-            </v-list-item-title >
-            </main>
+              <v-img src="https://images-ext-2.discordapp.net/external/oqct4MaV6IKrI6SjBuXuZq1tl4qeiO4A45GgCeUnxbQ/%3Fcompress%3D1%26resize%3D400x300/https/cdn.dribbble.com/users/95644/screenshots/8931405/media/3890e6f601cdf328377154c93a3b90de.png" alt="" contain
+              height="100px"
+              width="100px">
+              </v-img>
           </v-list-item-content>
         </v-list-item>
 
@@ -29,7 +28,6 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
-
 
       </v-navigation-drawer>
 
@@ -80,7 +78,7 @@ export default {
       { title: "Create New User", icon: "mdi-account-plus", to: "/createUser" },
       { title: "Create Restaurant", icon: "mdi-plus", to: "/createRestaurant" },
       { title: "Edit User", icon: "mdi-pencil", to: "/editUser" },
-      { title: "Edit Restaurant", icon: "mdi-pencil", to: "/editRestaurant" },
+      { title: "Edit Restaurant", icon: "mdi-pen", to: "/editRestaurant" },
     ],
     right: null,
   }),
