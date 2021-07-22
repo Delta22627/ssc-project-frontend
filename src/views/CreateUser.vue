@@ -14,21 +14,21 @@
 
         <v-text-field
           v-model="firstname"
-          :rules="usernameRules"
+          :rules="firstnameRules"
           label="Firstname"
           required
         ></v-text-field>
 
         <v-text-field
           v-model="lastname"
-          :rules="usernameRules"
+          :rules="lastnameRules"
           label="Lastname"
           required
         ></v-text-field>
 
         <v-text-field
           v-model="dateofbirth"
-          :rules="usernameRules"
+          :rules="dateOfBirthRules"
           label="Date of Birth"
           required
         ></v-text-field>
@@ -44,7 +44,7 @@
         <v-text-field
             type="password"
             v-model="cpassword"
-            :rules="passwordRules"
+            :rules="confirmPasswordRules"
             label="Confirm Password"
             required
         ></v-text-field>
@@ -71,6 +71,10 @@ export default {
     dateofbirth: "",
     usernameRules: [(v) => !!v || "User is required"],
     passwordRules: [(v) => !!v || "Password is required"],
+    firstnameRules: [(v) => !!v || "First name is required"],
+    lastnameRules: [(v) => !!v || "Last name is required"],
+    dateOfBirthRules: [(v) => !!v || "Date of Birth is required"],
+    confirmPasswordRules: [(v) => !!v || "Confirmation password is required"],
   }),
 
   methods: {
