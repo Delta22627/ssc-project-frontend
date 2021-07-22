@@ -92,8 +92,8 @@ export default {
       this.selectedFile = event.target.file[0]
     },
     onUpload() {
-
     },
+
     createImage(files){
       var reader = new FileReader();
       reader.onload = (event) => {

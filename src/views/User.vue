@@ -25,12 +25,12 @@
 </template>
 <script>
 export default {
+
   data: () => ({
     valid: true,
     firstname: "",
     lastname: "",
     dateofbirth: "",
-
   }),
 
   methods: {
@@ -43,5 +43,4 @@ export default {
   }
 };
 </script>
-=======
->>>>>>> Stashed changes
+
