@@ -92,7 +92,6 @@ export default {
           dateOfBirth: this.dateofbirth,
           password: this.password,
         });
-        // console.log(response);
         if (response.data.success) {
           this.$router.push({ path: "/" });
         }

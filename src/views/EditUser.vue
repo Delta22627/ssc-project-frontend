@@ -58,11 +58,12 @@ export default {
       if (this.$refs.form.validate()) {
         //submit to backend to authenticate
 
-        let response = await Vue.axios.post("/api/user", {
+        let response = await Vue.axios.post("/api/user/password", {
           username: this.username,
-          password: this.newPassword,
+          password: this.password,
+          newPassword: this.newPassword,
         });
-        console.log(response);
+
         if (response.data.success) {
           this.$router.push({ path: "/" });
         }
