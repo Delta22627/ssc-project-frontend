@@ -35,8 +35,9 @@
             required
         ></v-text-field>
 
-        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit">confirm</v-btn>
-        <v-btn :disabled="!valid" color="red"  class="mr-4" @click="reset">cancel</v-btn>
+
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="submit"><v-icon>mdi-check</v-icon>confirm</v-btn>
+        <v-btn :disabled="!valid" color="red" class="mr-4" @click="reset"><v-icon>mdi-close-circle</v-icon>cancel</v-btn>
 
       </v-form>
     </template>

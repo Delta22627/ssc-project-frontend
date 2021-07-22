@@ -4,23 +4,11 @@
       <v-navigation-drawer v-model="drawer" app class="orange">
         <v-list-item>
           <v-list-item-content>
+            <main class="box">
             <v-list-item-title class="text-h6">
               MENU
             </v-list-item-title >
-            <v-list-item-subtitle>
-
-<!--              <v-form ref="form" v-model="valid" lazy-validation >
-                <v-btn
-                  :disabled="!valid"
-                  color="red"
-                  class="mr-4"
-                  @click="submit"
-                  elevation="2"
-                  small
-                  >Logout</v-btn
-                >
-              </v-form>-->
-            </v-list-item-subtitle>
+            </main>
           </v-list-item-content>
         </v-list-item>
 
@@ -53,15 +41,15 @@
         <v-spacer> </v-spacer>
 
           <v-form ref="form" v-model="valid" lazy-validation >
+
             <v-btn
                 :disabled="!valid"
-                color="red"
+                color="dark yellow"
                 class="mr-4"
                 @click="submit"
                 elevation="2"
                 small
-            ><v-icon
-            >mdi-logout</v-icon>Logout</v-btn
+            ><v-icon left> mdi-logout</v-icon >Logout</v-btn
             >
           </v-form>
 
@@ -113,3 +101,14 @@ export default {
   },
 };
 </script>
+<style>
+.box {
+  background-color: #FFE57F;
+  border-radius: 20px;
+  padding: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
